@@ -1,12 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>수원시 전기차 충전소 현황</title>
-    <script src="PracApi.js"></script>
+    <title>API연습</title>
 </head>
+
 <body>
-    
+    <h1>도서 검색대</h1>
+    <p></p>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        $.ajax({ // 코드 상단에는 요청에 대한 정보가 들어감
+            method: "GET", // 전송 방식
+            url: "https://dapi.kakao.com/v3/search/book?target=title", // 전송 주소
+            data: {query:'미움받을 용기'}, // 보낼 데이터
+            headers: {Authorization: `KakaoAK 51a157b9dd974840de2679733947d241`}
+        })
+            .done(function (msg) {
+                console.log(msg. documents[0].title);
+                console.log(msg. documents[0].thumbnail);
+                $( "p" ).append(msg. documents[0].title);
+                $( "p" ).append("<Img src='"+ msg. documents[0].thumbnail+"'/>");
+            });
+    </script>
 </body>
+
 </html>
