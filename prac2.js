@@ -1,9 +1,9 @@
-const API_Key = "발급된 API키를 적어준다.";
-
-async function getData(){
-    const url = url('요청할 data의 url주소와 함께 요청할 것을 확인 후 요청 변수를 적어준 후 값을 함께 적어준다.');
-    const response = await fetch(url); // await: 데이터가 올 때까지 기다려라! 그의 짝은 async 함수
-    const data = await response.json(); // 요청한 데이터가 담겨있는 respone에서 json 방식의 데이터만 뽑아서 data에 넣어달라.
-    console.log("data", data)
+const api_Key = 'lhOpwn3M7x6UQcKwJ8IHuRDop80ZLquctsZSm6k0DbLBkeRNZ%2B6cijzQb7JjdeuL%2B%2F%2BW%2B2tA9mMi%2BoNgsdkKLw%3D%3D';
+async function getData() {
+    const url = `apis.data.go.kr/B552061/frequentzoneBicycle/getRestFrequentzoneBicycle?ServiceKey =${api_Key}&searchYearCd=2015&siDo=11&guGun=680&type=json&numOfRows=10&pageNo=1`;
+    const response = await fetch(url); 
+    const data = response.json();
+    
+    console.log("data", data);
 }
-getData(); // 함수를 호출해야 작동을 하겠지?
+getData();
