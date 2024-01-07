@@ -1,0 +1,17 @@
+body {
+    background-color: gold;
+    border: 2px solid red;
+    border-radius: 5px;
+}
+
+.mainTitles {
+    text-align: center;
+}
+
+.mainTitle {
+    font-size: 60px;
+}
+
+.searchMovies {
+    font-size: 30px;
+}
