@@ -19,7 +19,8 @@ const callApi = fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-
 
             let title = a['original_title'];
             let overview = a['overview'];
-            let rating = Math.trunc(a['vote_average']);
+            // Math.trunc() 함수로 소수점 자를 수 있음.
+            let rating = a['vote_average'];
             let img = a['poster_path'];
             // 이미지 클릭시 아이디 출력 함수
             function alertId(event) {
