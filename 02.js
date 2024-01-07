@@ -7,10 +7,19 @@ const options = {
     }
 };
 
-    fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
-    .then(response => response.json())
-    .then(response => response['results'].forEach(row => {
-        console.
+// API에 연동한 것.
+const callApi = fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
+    .then(res => res.json())
+    .then(data => {
+        let datas = data['results'];
+        datas.forEach(a => {
+            let title = a['original_title'];
+            let id = a['id'];
+            console.log(title + id);
+        });
+
     });
+
+
 
 
