@@ -1,3 +1,5 @@
+
+// API 연동
 const options = {
     method: 'GET',
     headers: {
@@ -8,6 +10,7 @@ const options = {
 };
 
 // API에 연동한 것.
+const urlImage = "https://image.tmdb.org/t/p/w500";
 const callApi = fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
     .then(res => res.json())
     .then(data => {
@@ -19,7 +22,3 @@ const callApi = fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-
         });
 
     });
-
-
-
-

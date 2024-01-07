@@ -1,17 +1,35 @@
 body {
     background-color: gold;
-    border: 2px solid red;
-    border-radius: 5px;
 }
 
 .mainTitles {
     text-align: center;
+    border: 3px solid red;
+    border-radius: 5px;
 }
 
 .mainTitle {
+
     font-size: 60px;
 }
 
 .searchMovies {
     font-size: 30px;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.myCards {
+    text-align: center;
+    margin: 50px 0px 50px 0px;
+    border: 3px solid red;
+    border-radius: 5px;
+    
+}
+
+.movieCard {
+    margin: 30px 0px 30px 0px;
+}
+.card-body {
+    padding: 10px 0px 10px 0px;
 }
