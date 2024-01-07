@@ -16,9 +16,26 @@ const callApi = fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-
     .then(data => {
         let datas = data['results'];
         datas.forEach(a => {
-            let title = a['original_title'];
-            let id = a['id'];
-            console.log(title + id);
-        });
 
+            let title = a['original_title'];
+            let overview = a['overview'];
+            let rating = a['vote_average'];
+            let img = a['poster_path'];
+
+            let temp_html = `<div class="col">
+            <div class="myCards">
+                <img src='urlImage${img} + id'
+                    class="movieCard" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">${title}</h5>
+                    <p class="card-overview">${overview}</p>
+                    <p class="card-vote_average">${rating}</p>
+                </div>
+            </div>
+        </div>`
+
+            document.querySelector('body').innerHTML += temp_html;
+
+        });
+        console.log(data);
     });
