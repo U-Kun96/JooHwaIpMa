@@ -1,3 +1,5 @@
+/* 전반적인 디자인 컨셉 : 과거 어릴적 나이트 홍보지 느낌 */
+
 body {
     background-color: gold;
 }
@@ -20,6 +22,7 @@ body {
 }
 
 .myCards {
+    
     text-align: center;
     margin: 50px 0px 50px 0px;
     border: 3px solid red;
@@ -31,5 +34,6 @@ body {
     margin: 30px 0px 30px 0px;
 }
 .card-body {
+    font-size: 20px;
     padding: 10px 0px 10px 0px;
 }

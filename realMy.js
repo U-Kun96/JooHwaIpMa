@@ -10,7 +10,7 @@ const options = {
 };
 
 // API에 연동한 것.
-const urlImage = "https://image.tmdb.org/t/p/w500";
+// const urlImage = "https://image.tmdb.org/t/p/w500";
 const callApi = fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
     .then(res => res.json())
     .then(data => {
@@ -19,23 +19,29 @@ const callApi = fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-
 
             let title = a['original_title'];
             let overview = a['overview'];
-            let rating = a['vote_average'];
+            let rating = Math.trunc(a['vote_average']);
             let img = a['poster_path'];
+            // 이미지 클릭시 아이디 출력 함수
+            function alertId(event) {
+                let id = event.target.getAttribute(a['data-id']);
+                alert(id);
+            }
 
+            // https://image.tmdb.org/t/p/w500를 변수에 할당을 한 후 img태그에 넣어줬는데 안댐... 해결: 변수를 없애고 그냥 url자체를 넣어버림
             let temp_html = `<div class="col">
             <div class="myCards">
-                <img src='urlImage${img} + id'
-                    class="movieCard" alt="...">
+                <img src='https://image.tmdb.org/t/p/w500${img}'
+                    class="movieCard" alt="..." onclick="alertId(id)">
                 <div class="card-body">
-                    <h5 class="card-title">${title}</h5>
-                    <p class="card-overview">${overview}</p>
-                    <p class="card-vote_average">${rating}</p>
+                    <h5 class="card-title">제목<br>${title}</h5>
+                    <p class="card-overview">줄거리<br> ${overview}</p>
+                    <p class="card-vote_average">평점<br>${rating}</p>
                 </div>
             </div>
         </div>`
 
+            // document.querySelcetor로 바디태그를 선택한 뒤 
             document.querySelector('body').innerHTML += temp_html;
-
         });
         console.log(data);
     });
