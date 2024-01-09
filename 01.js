@@ -23,9 +23,9 @@ const callApi = fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-
             let rating = a['vote_average'];
             let img = a['poster_path'];
             // 이미지 클릭시 아이디 출력 함수
-            function alertId(event) {
-                let id = event.target.getAttribute(a['data-id']);
-                alert(id);
+            let alertId = function(event) {
+                event.target.getAttribute(a['id']);
+                
             }
 
             // https://image.tmdb.org/t/p/w500를 변수에 할당을 한 후 img태그에 넣어줬는데 안댐... 해결: 변수를 없애고 그냥 url자체를 넣어버림
