@@ -6,14 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>영화 검색</title>
     <link rel="stylesheet" href="01.css">
+    <!-- defer를 통해 html 파스가 모두 진행이 된 후 제어권을 js가 받아올 수 있게 한다. -->
+    <!-- type ="module은 defer의 기능을 내재하고 있다." -->
+    <script type="module" src="01.js"></script>
 </head>
 
 <body>
-    <script src="01.js"></script>
+    
     <!-- 제목, 검색창 부분 -->
     <div class="mainTitles">
         <h1 class="mainTitle">영화 검색하기</h1>
-        <p class="searchMovies">영화 제목: <input type="text" style="padding: 10px;"> <button onclick=""
+        <p class="searchMovies">영화 제목: <input type="text" style="padding: 10px;"> <button id="searchBtn" onclick=""
                 style="padding: 10px;">검색</button></p>
     </div>
 
